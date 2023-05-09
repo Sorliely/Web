@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("xnjdklsjf")
+    return render(request, 'cars/index.html')
 
 def show_category(request, cat_id):
 
