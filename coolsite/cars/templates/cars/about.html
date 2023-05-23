@@ -6,6 +6,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>О сайте</h1>
-</body>
+{% block content %}
+<ul class="list-articles">
+    {% for p in posts %}
+    <li><h2>{{p.title}}</h2></li>
+    {% endfor %}
+</ul>
+{% endblock %}
 </html>

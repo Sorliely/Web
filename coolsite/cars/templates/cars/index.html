@@ -2,8 +2,9 @@
 
 {% block content %}
 <ul class="list-articles">
-	{% for p in posts %}
-			<li><h2>{{p.title}}</h2></li>
-	{% endfor %}
+    {% for p in posts %}
+    <li><h2>{{p.title}}</h2></li>
+    <li><p>{{p.title}}</p></li>
+    {% endfor %}
 </ul>
 {% endblock %}
