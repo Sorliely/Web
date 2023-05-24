@@ -1,10 +1,16 @@
 {% extends 'cars/base.html' %}
-
 {% block content %}
-<ul class="list-articles">
+
+<ul>
     {% for p in posts %}
-    <li><h2>{{p.title}}</h2></li>
-    <li><p>{{p.title}}</p></li>
+    <li>
+        {% if p.photo %}
+            <p><img class="photo" src="{{p.photo.url}}" </p>
+        {% endif %}
+        <h2>{{p.title}}</h2>
+        <p>{{p.content}}</p>
+
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}
