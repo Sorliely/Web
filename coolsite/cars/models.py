@@ -14,8 +14,8 @@ class Cars(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'Машины'
-        verbose_name_plural = 'Машины'
+        verbose_name = 'Главная'
+        verbose_name_plural = 'Главная'
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
