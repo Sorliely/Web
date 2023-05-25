@@ -13,15 +13,16 @@
         <td valign=top>
             {% block mainmenu %}
             <div class="header">
-                <h1 class="name"><a href="{% url 'home' %}">Subaru</a></h1>
+                <h1 class="name"><a href="{% url 'home' %}">Nissan</a></h1>
                 <ul id="mainmenu" class="mainmenu">
                     {% for m in menu %}
                     {% if not forloop.last %}
-                    <li><a href="#">{{m.title}}</a></li>
+                    <li><a href="{% url m.url_name %}">{{m.title}}</a></li>
                     {% else %}
                     <li class="last"><a href="#">{{m.title}}</a></li>
                     {% endif %}
                     {% endfor %}
+
                 </ul>
             </div>
             {% endblock mainmenu %}

@@ -3,8 +3,8 @@ from django.shortcuts import render
 from cars.models import *
 
 menu = [{'title': "История", 'url_name': 'history'},
+        {'title': "Обратная связь", 'url_name': 'feedback'},
         {'title': "О сайте", 'url_name': 'about'},
-        {'title': "Обратная связь", 'url_name': 'contact'},
         {'title': "Авторизация", 'url_name': 'login'}]
 
 
@@ -21,11 +21,11 @@ def about(request):
 
 
 def feedback(request):
-    return HttpResponse('Будет возращать пункт для связи с разработчиком')
+    return render(request, 'cars/feedback.html', {'menu': menu, 'title': 'Обратная связь'})
 
 
 def history(request):
-    return HttpResponse("Будет возвращать страницу истории создания кузова")
+    return render(request, 'cars/history.html', {'menu': menu, 'title': 'История'})
 
 
 def login(request):
@@ -34,6 +34,7 @@ def login(request):
 
 def logup(request):
     return HttpResponse("Возращает пункт для регистрации")
+
 
 
 def show_category(request, cat_id):
